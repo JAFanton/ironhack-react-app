@@ -38,6 +38,9 @@ function App() {
       <Navbar />
       <CreateItem callBackToCreate={createRecipe} />
       <Routes>
+        <Route 
+        path="/About-us"
+        />
         <Route
           path="/"
           element={<List recipes={recipesToDisplay} onDelete={deleteRecipe} />}
