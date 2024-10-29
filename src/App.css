@@ -37,7 +37,7 @@ h1 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
   color: black;
 }
 
@@ -164,4 +164,23 @@ button {
   padding: 5px;
   margin-top: 5px;
   box-sizing: border-box;
+}
+
+.box {
+  margin: 15px;
+  padding: auto;
+  border: solid 5px black;
+  text-align: center;
+}
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.profile-container img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
 }

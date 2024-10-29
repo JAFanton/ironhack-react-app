@@ -1,13 +1,13 @@
 import "./App.css";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import recipes from "./data/recipes.json";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import List from "./components/List";
 import CreateItem from "./components/CreateItem";
+import About from "./components/About";
 
 function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
@@ -36,14 +36,16 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <CreateItem callBackToCreate={createRecipe} />
       <Routes>
-        <Route 
-        path="/About-us"
-        />
+        <Route path="/About" element={<About />} />
         <Route
           path="/"
-          element={<List recipes={recipesToDisplay} onDelete={deleteRecipe} />}
+          element={
+            <>
+              <CreateItem callBackToCreate={createRecipe} />
+              <List recipes={recipesToDisplay} onDelete={deleteRecipe} />
+            </>
+          }
         />
       </Routes>
       <Sidebar />
