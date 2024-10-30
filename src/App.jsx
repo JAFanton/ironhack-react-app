@@ -5,9 +5,10 @@ import recipes from "./data/recipes.json";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import List from "./components/List";
-import CreateItem from "./components/CreateItem";
-import About from "./components/About";
+import List from "./pages/List";
+import CreateItem from "./pages/CreateItem";
+import About from "./pages/About";
+import ItemDetails from "./pages/ItemDetails";
 
 function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
@@ -37,16 +38,10 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<List recipes={recipesToDisplay} onDelete={deleteRecipe} />} />
         <Route path="/About" element={<About />} />
-        <Route
-          path="/"
-          element={
-            <>
-              <CreateItem callBackToCreate={createRecipe} />
-              <List recipes={recipesToDisplay} onDelete={deleteRecipe} />
-            </>
-          }
-        />
+        <Route path="/create" element={<CreateItem callBackToCreate={createRecipe} />} />
+        <Route path="/recipe/:recipeId" element={<ItemDetails />} />
       </Routes>
       <Sidebar />
       <Footer />
