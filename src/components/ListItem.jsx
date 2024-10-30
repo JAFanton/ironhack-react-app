@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const ListItem = ({ item, onDelete }) => {
   const allValuesTruthy = Object.values(item).every((value) => Boolean(value));
 
