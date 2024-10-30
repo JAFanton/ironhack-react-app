@@ -98,18 +98,19 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-
+padding: 20px;
 }
 
 .recipes-list {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 
 .recipe-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 20px;
   padding: 15px;
   border: 2px solid #ccc;
@@ -136,6 +137,7 @@ button {
   height: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-right: 10px;
   padding: 8px;
   background-color: #FAD7D8;
   border-radius: 8px;
