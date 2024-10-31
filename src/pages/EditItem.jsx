@@ -81,9 +81,10 @@ function EditItem({recipes, callBackToEdit}) {
         <label>
           Calories:
           <input
-            type="text"
+            type="number"
             name="calories"
             placeholder="input text"
+            min='1'
             value={calories}
             onChange={(e) => setCalories(e.target.value)}
           />
@@ -93,9 +94,11 @@ function EditItem({recipes, callBackToEdit}) {
         <label>
           Servings:
           <input
-            type="text"
+            type="number"
             name="servings"
             placeholder="input text"
+            min='1'
+            max='20'
             value={servings}
             onChange={(e) => setServings(e.target.value)}
           />
