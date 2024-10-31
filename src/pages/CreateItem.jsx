@@ -72,9 +72,10 @@ function CreateItem(props) {
         {/*Calories*/}
         <label>Calories:
           <input
-            type="text"
+            type="number"
             name="calories"
             placeholder="input text"
+            min='1'
             value={calories}
             onChange={(e) => {
               setCalories(e.target.value);
@@ -85,9 +86,11 @@ function CreateItem(props) {
         {/*Servings*/}
         <label>Servings:
           <input
-            type="text"
+            type="number"
             name="servings"
             placeholder="input text"
+            min='1'
+            max='20'
             value={servings}
             onChange={(e) => {
               setServings(e.target.value);
