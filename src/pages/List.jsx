@@ -22,7 +22,7 @@ function List({ recipes, onDelete }) {
                 <p>{recipeObj.calories} Calories</p>
                 <p>{recipeObj.servings} Serving(s)</p>
                 <p>
-                  Recipe {allValuesTruthy ? "completed" : "missing components"}
+                  {allValuesTruthy ? "" : "Recipe incomplete"}
                 </p>
               </div>
               <div className="recipe-buttons">

@@ -4,19 +4,21 @@ function Sidebar() {
   return (
     <div class="sidebar">
       <button>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" style={isActive => ({
+    color: isActive ? "black" : "blue", textDecoration: "none"
+  })}>Home</NavLink>
       </button>
 
       <button>
-        <a href="">
-          <NavLink to="/About">About</NavLink>
-        </a>
+          <NavLink to="/About" style={isActive => ({
+    color: isActive ? "black" : "blue", textDecoration: "none"
+  })}>About</NavLink>
       </button>
 
       <button>
-        <a href="">
-          <NavLink to="/Create">Add Recipe</NavLink>
-        </a>
+          <NavLink to="/Create" style={isActive => ({
+    color: isActive ? "black" : "blue", textDecoration: "none"
+  })}>Add Recipe</NavLink>
       </button>
 
     </div>

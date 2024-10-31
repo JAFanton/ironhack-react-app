@@ -42,7 +42,8 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
+      <div className="App">
       <Navbar />
       <Routes>
         <Route path="/" element={<List recipes={recipesToDisplay} onDelete={deleteRecipe} />} />
@@ -52,7 +53,8 @@ function App() {
         <Route path="/recipe/:recipeId" element={<ItemDetails recipes={recipesToDisplay} />} />
       </Routes>
       <Sidebar />
-      <Footer />
+      </div>
+    <Footer />
     </div>
   );
 }

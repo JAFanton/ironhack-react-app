@@ -28,11 +28,11 @@ function ItemDetails({recipes}) {
 
         <p>Serving(s): {recipeDetails.servings}</p>
 
-        <p>Recipe {allValuesTruthy ? "completed" : "missing components"}</p>
+        <p> {allValuesTruthy ? "" : "Recipe incomplete"}</p>
       </>
       <>
       <button>
-        <Link to="/" className="button">
+        <Link to="/" className='button' style={{ textDecoration: 'none', color: 'black' }}>
           Back
         </Link>
       </button>
@@ -40,7 +40,7 @@ function ItemDetails({recipes}) {
 
       <>
       <button>
-        <Link to={`/edit/${recipeId}`} className="button">
+        <Link to={`/edit/${recipeId}`} className='button' style={{ textDecoration: 'none' , color: 'black'}}>
           Edit
         </Link>
       </button>
