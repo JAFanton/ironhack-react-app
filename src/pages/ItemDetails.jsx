@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
-import recipes from "../data/recipes.json";
 import { Link } from "react-router-dom";
 
-function ItemDetails() {
+function ItemDetails({recipes}) {
   const { recipeId } = useParams();
 
+  //To ensure the ID we are tracking is indeed a number
   const recipeDetails = recipes.find((recipe) => recipe.id === parseInt(recipeId)); 
   
+  //If there is no recipe ID found then return ...
   if (!recipeDetails) {
     return <h2>Recipe not found</h2>;
   }
@@ -23,10 +24,17 @@ function ItemDetails() {
         <p>Serving(s): {recipeDetails.servings}</p>
       </>
       <button>
-        <Link to="/" className="btn btn-primary">
+        <Link to="/" className="button">
           Back
         </Link>
       </button>
+
+      <button>
+        <Link to={`/edit/${recipeId}`} className="button">
+          Edit
+        </Link>
+      </button>
+
     </div>
   );
 }

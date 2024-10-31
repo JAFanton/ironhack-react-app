@@ -9,6 +9,7 @@ import List from "./pages/List";
 import CreateItem from "./pages/CreateItem";
 import About from "./pages/About";
 import ItemDetails from "./pages/ItemDetails";
+import EditItem from "./pages/EditItem";
 
 function App() {
   const [recipesToDisplay, setRecipesToDisplay] = useState(recipes);
@@ -34,6 +35,12 @@ function App() {
     setRecipesToDisplay(newArray);
   };
 
+  const updateRecipe = (updatedRecipe) => {
+    const newRecipes = recipesToDisplay.map((recipe) => recipe.id === updatedRecipe.id ? updatedRecipe : recipe);
+
+    setRecipesToDisplay(newRecipes);
+  };
+
   return (
     <div className="App">
       <Navbar />
@@ -41,7 +48,8 @@ function App() {
         <Route path="/" element={<List recipes={recipesToDisplay} onDelete={deleteRecipe} />} />
         <Route path="/About" element={<About />} />
         <Route path="/create" element={<CreateItem callBackToCreate={createRecipe} />} />
-        <Route path="/recipe/:recipeId" element={<ItemDetails />} />
+        <Route path="/edit/:recipeId" element={<EditItem recipes={recipesToDisplay} callBackToEdit={updateRecipe} />} />
+        <Route path="/recipe/:recipeId" element={<ItemDetails recipes={recipesToDisplay} />} />
       </Routes>
       <Sidebar />
       <Footer />
