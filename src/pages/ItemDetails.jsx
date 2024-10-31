@@ -30,17 +30,21 @@ function ItemDetails({recipes}) {
 
         <p>Recipe {allValuesTruthy ? "completed" : "missing components"}</p>
       </>
+      <>
       <button>
         <Link to="/" className="button">
           Back
         </Link>
       </button>
+      </>
 
+      <>
       <button>
         <Link to={`/edit/${recipeId}`} className="button">
           Edit
         </Link>
       </button>
+      </>
 
     </div>
   );

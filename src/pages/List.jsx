@@ -26,15 +26,20 @@ function List({ recipes, onDelete }) {
                 </p>
               </div>
               <div className="recipe-buttons">
-                <button onClick={() => onDelete(recipeObj.id)}>Delete</button>
-                <button className="button">
-                  <NavLink
-                    to={`/recipe/${recipeObj.id}`}
-                    style={{ color: "inherit", textDecoration: "none" }}
-                  >
-                    More Details
-                  </NavLink>
-                </button>
+                <>
+                  <button onClick={() => onDelete(recipeObj.id)}>Delete</button>
+                </>
+
+                <>
+                  <button className="button">
+                    <NavLink
+                      to={`/recipe/${recipeObj.id}`}
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      More Details
+                    </NavLink>
+                  </button>
+                </>
               </div>
             </li>
           );
